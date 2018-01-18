@@ -150,10 +150,9 @@ public class MainActivity extends AppCompatActivity implements
             // loadInBackground() performs asynchronous loading of data
             @Override
             public Cursor loadInBackground() {
-                // Will implement to load data
+                // implement to load data
 
                 // Query and load all task data in the background; sort by priority
-                // [Hint] use a try/catch block to catch any errors in loading data
 
                 try {
                     return getContentResolver().query(TaskContract.TaskEntry.CONTENT_URI,
