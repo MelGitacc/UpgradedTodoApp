@@ -17,8 +17,7 @@ import android.support.annotation.NonNull;
 public class TaskContentProvider extends ContentProvider {
 
     // Define final integer constants for the directory of tasks and a single item.
-    // It's convention to use 100, 200, 300, etc for directories,
-    // and related ints (101, 102, ..) for items in that directory.
+   
     public static final int TASKS = 100;
     public static final int TASK_WITH_ID = 101;
 
@@ -57,8 +56,7 @@ public class TaskContentProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         // Complete onCreate() and initialize a TaskDbhelper on startup
-        // [Hint] Declare the DbHelper as a global variable
-
+        
         Context context = getContext();
         mTaskDbHelper = new TaskDbHelper(context);
         return true;
@@ -87,7 +85,7 @@ public class TaskContentProvider extends ContentProvider {
                 }
                 break;
             // Set the value for the returnedUri and write the default case for unknown URI's
-            // Default case throws an UnsupportedOperationException
+            
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
         }
@@ -149,7 +147,7 @@ public class TaskContentProvider extends ContentProvider {
         int tasksDeleted; // starts as 0
 
         // Write the code to delete a single row of data
-        // [Hint] Use selections to delete an item by its row ID
+        // Use selections to delete an item by its row ID
         switch (match) {
             // Handle the single item case, recognized by the ID included in the URI path
             case TASK_WITH_ID:
